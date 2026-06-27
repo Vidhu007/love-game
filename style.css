@@ -1,0 +1,724 @@
+/* ==========================
+        GLOBAL STYLES
+========================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+
+  overflow: hidden;
+
+  height: 100vh;
+
+  color: white;
+
+  background: linear-gradient(-45deg, #ff4d88, #ff8fab, #b5179e, #7209b7);
+
+  background-size: 400% 400%;
+
+  animation: bgAnimation 15s ease infinite;
+}
+
+/* ==========================
+        ANIMATED BACKGROUND
+========================== */
+
+@keyframes bgAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ==========================
+        PAGES
+========================== */
+
+.page {
+  position: absolute;
+
+  width: 100%;
+  height: 100%;
+
+  display: none;
+
+  justify-content: center;
+  align-items: center;
+
+  padding: 40px;
+}
+
+.page.active {
+  display: flex;
+}
+
+/* ==========================
+        GLASS CARD
+========================== */
+
+.glass {
+  width: 90%;
+  max-width: 700px;
+
+  background: rgba(255, 255, 255, 0.15);
+
+  backdrop-filter: blur(18px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 30px;
+
+  padding: 45px;
+
+  text-align: center;
+
+  box-shadow:
+    0 15px 40px rgba(0, 0, 0, 0.25),
+    inset 0 0 20px rgba(255, 255, 255, 0.15);
+
+  animation: pop 0.8s ease;
+}
+
+@keyframes pop {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ==========================
+        HEADINGS
+========================== */
+
+h1 {
+  font-family: "Pacifico", cursive;
+
+  font-size: 55px;
+
+  margin-bottom: 15px;
+}
+
+h2 {
+  font-size: 38px;
+
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 28px;
+
+  margin-bottom: 15px;
+}
+
+h4 {
+  font-size: 22px;
+
+  margin: 25px 0;
+}
+
+p {
+  font-size: 18px;
+
+  line-height: 1.8;
+}
+
+/* ==========================
+        BUTTONS
+========================== */
+
+button {
+  margin-top: 20px;
+
+  border: none;
+
+  cursor: pointer;
+
+  padding: 15px 30px;
+
+  border-radius: 50px;
+
+  color: white;
+
+  font-size: 18px;
+
+  background: linear-gradient(90deg, #ff4d6d, #ff758f);
+
+  transition: 0.35s;
+
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+}
+
+button:hover {
+  transform: translateY(-5px) scale(1.05);
+
+  box-shadow: 0 20px 35px rgba(0, 0, 0, 0.35);
+}
+
+/* ==========================
+        OPTIONS
+========================== */
+
+.option {
+  display: block;
+
+  width: 100%;
+
+  margin: 12px auto;
+}
+
+.option:hover {
+  background: white;
+
+  color: #ff4d88;
+}
+
+/* ==========================
+        IMAGES
+========================== */
+
+.memory-image {
+  width: 100%;
+
+  max-width: 450px;
+
+  height: 270px;
+
+  object-fit: cover;
+
+  border-radius: 20px;
+
+  margin: 25px auto;
+
+  display: block;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+
+  transition: 0.4s;
+}
+
+.memory-image:hover {
+  transform: scale(1.03);
+}
+
+/* ==========================
+        BLUR IMAGE
+========================== */
+
+.blur {
+  filter: blur(10px);
+}
+
+/* ==========================
+        FINAL IMAGE
+========================== */
+
+.final-photo {
+  width: 280px;
+
+  border-radius: 50%;
+
+  margin: 25px auto;
+
+  display: block;
+
+  border: 6px solid white;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* ==========================
+        INPUT
+========================== */
+
+input {
+  width: 100%;
+
+  margin-top: 25px;
+
+  padding: 15px;
+
+  border-radius: 15px;
+
+  border: none;
+
+  font-size: 18px;
+
+  outline: none;
+}
+
+/* ==========================
+        TIMELINE
+========================== */
+
+.timeline {
+  list-style: none;
+
+  margin: 30px auto;
+
+  text-align: left;
+}
+
+.timeline li {
+  margin: 18px 0;
+
+  padding-left: 20px;
+
+  position: relative;
+
+  font-size: 20px;
+}
+
+.timeline li::before {
+  content: "❤️";
+
+  position: absolute;
+
+  left: -10px;
+}
+
+/* ==========================
+        VACATIONS
+========================== */
+
+.vacations {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 25px;
+
+  flex-wrap: wrap;
+
+  margin-top: 30px;
+}
+
+.place {
+  width: 220px;
+
+  cursor: pointer;
+
+  transition: 0.4s;
+}
+
+.place img {
+  width: 100%;
+
+  height: 170px;
+
+  border-radius: 18px;
+
+  object-fit: cover;
+}
+
+.place:hover {
+  transform: translateY(-8px);
+}
+
+.place p {
+  margin-top: 10px;
+
+  font-size: 18px;
+}
+
+/* ==========================
+        PROGRESS BAR
+========================== */
+
+.progress-container {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 8px;
+
+  background: rgba(255, 255, 255, 0.2);
+
+  z-index: 999;
+}
+
+.progress-bar {
+  height: 100%;
+
+  width: 0%;
+
+  background: white;
+
+  transition: 0.6s;
+}
+
+/* ==========================
+        HEARTS
+========================== */
+
+.hearts-container {
+  position: fixed;
+
+  width: 100%;
+
+  height: 100%;
+
+  pointer-events: none;
+
+  overflow: hidden;
+
+  z-index: -1;
+}
+
+.heart {
+  position: absolute;
+
+  bottom: -50px;
+
+  font-size: 25px;
+
+  animation: floatUp linear forwards;
+
+  opacity: 0.8;
+}
+
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) rotate(0deg);
+
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-120vh) rotate(360deg);
+
+    opacity: 0;
+  }
+}
+
+/* ==========================
+        CONFETTI
+========================== */
+
+#confetti {
+  position: fixed;
+
+  top: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 100%;
+
+  pointer-events: none;
+}
+
+/* ==========================
+        MOBILE
+========================== */
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 38px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  .glass {
+    padding: 25px;
+  }
+
+  .memory-image {
+    height: 220px;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  .place {
+    width: 100%;
+  }
+}
+
+/* ==========================
+        TIMELINE
+========================== */
+
+.timeline-card {
+  width: 95%;
+  max-width: 950px;
+
+  margin: 0 auto;
+
+  padding-bottom: 40px;
+}
+
+.timeline-subtitle {
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.timeline-wrapper {
+  position: relative;
+
+  width: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 35px;
+
+  margin: 40px auto;
+
+  padding-bottom: 30px;
+}
+
+/* .timeline-item {
+  margin: 25px 0;
+} */
+
+/* #nextTimeline {
+  position: sticky;
+
+  bottom: 10px;
+
+  z-index: 100;
+} */
+
+/* Vertical Line */
+
+.timeline-line {
+  position: absolute;
+
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 4px;
+
+  height: 100%;
+
+  background: linear-gradient(#ff6ea8, #ffffff, #ff6ea8);
+
+  border-radius: 50px;
+}
+
+/* Each Item */
+
+.timeline-item {
+  width: 100%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  position: relative;
+}
+
+/* Left */
+
+.timeline-item.left {
+  flex-direction: row;
+}
+
+/* Right */
+
+.timeline-item.right {
+  flex-direction: row-reverse;
+}
+
+/* Photo */
+
+.timeline-photo {
+  width: 180px;
+
+  height: 180px;
+
+  object-fit: cover;
+
+  background: white;
+
+  padding: 10px 10px 35px;
+
+  border-radius: 8px;
+
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.35);
+
+  transition: 0.35s;
+}
+
+.timeline-photo:hover {
+  transform: scale(1.08) rotate(2deg);
+}
+
+/* Card */
+
+.timeline-content {
+  width: 55%;
+
+  background: rgba(255, 255, 255, 0.12);
+
+  backdrop-filter: blur(15px);
+
+  border: 1px solid rgba(255, 255, 255, 0.25);
+
+  border-radius: 18px;
+
+  padding: 20px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+.timeline-content h3 {
+  margin-bottom: 8px;
+}
+
+.timeline-content span {
+  color: #ffd7e8;
+
+  font-weight: 600;
+
+  display: block;
+
+  margin-bottom: 10px;
+}
+
+/* Circle */
+
+.timeline-item::before {
+  content: "❤️";
+
+  position: absolute;
+
+  left: 50%;
+
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  font-size: 22px;
+
+  background: #ff5c8a;
+
+  width: 46px;
+
+  height: 46px;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  box-shadow: 0 0 20px rgba(255, 80, 140, 0.6);
+
+  z-index: 5;
+}
+
+/* Floating Animation */
+
+.timeline-photo {
+  animation: floatPhoto 4s ease-in-out infinite;
+}
+
+@keyframes floatPhoto {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 850px) {
+  .timeline-line {
+    display: none;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    flex-direction: column;
+  }
+
+  .timeline-item::before {
+    display: none;
+  }
+
+  .timeline-content {
+    width: 100%;
+
+    margin-top: 20px;
+  }
+
+  .timeline-photo {
+    width: 240px;
+
+    height: 240px;
+  }
+}
+
+/* Only Level 4 should scroll */
+
+.page#level4.active {
+  justify-content: center;
+
+  align-items: flex-start;
+
+  overflow-y: auto;
+
+  padding-top: 70px;
+
+  padding-bottom: 40px;
+}
+
+/* Final page scroll */
+
+.page#final.active {
+  overflow-y: auto;
+
+  align-items: flex-start;
+
+  padding-top: 70px;
+
+  padding-bottom: 50px;
+}
